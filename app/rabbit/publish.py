@@ -14,7 +14,6 @@ def publish_topic(message: dict, routing_key: str):
             durable=True  # Make the exchange persistent
         )
 
-        # Declare queues for different log levels
         channel.queue_declare(queue=REST_NEW_MEAL_QUEUE, durable=True)
         channel.queue_declare(queue=REST_STOCK_AMOUNT_QUEUE, durable=True)
         channel.queue_declare(queue=REST_ALL_QUEUE, durable=True)
